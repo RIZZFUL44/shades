@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="bunnywifshades, $SHADES, Solana, NFT, crypto, bunny, shades, cool bunny, moon mission">
+  <meta name="author" content="bunnywifshades Team">
+    <link rel="icon" href="https://pump.mypinata.cloud/ipfs/QmZBtowju9Ek2cwnGeKqhtX4No7Hh3Sr2fSM6tUn5BKKfi?img-width=32&img-dpr=2&img-onerror" type="image/png">
+  <title>bunnywifshades ($SHADES) - The Coolest Bunny on Solana</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Animated background particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
+    .particle:nth-child(3) { left: 30%; animation-delay: 2s; }
+    .particle:nth-child(4) { left: 40%; animation-delay: 3s; }
+    .particle:nth-child(5) { left: 50%; animation-delay: 4s; }
+    .particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+    .particle:nth-child(7) { left: 70%; animation-delay: 1.5s; }
+    .particle:nth-child(8) { left: 80%; animation-delay: 2.5s; }
+    .particle:nth-child(9) { left: 90%; animation-delay: 3.5s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(100vh) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(180deg); }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      margin-bottom: 30px;
+      padding: 15px 30px;
+    }
+
+    .nav-logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      padding: 10px 20px;
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .contract-section {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(15px);
+      text-align: center;
+      padding: 20px;
+      border-radius: 20px;
+      margin: 30px auto;
+      max-width: 700px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    }
+
+    .contract-label {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #f0f0f0;
+    }
+
+    .contract-address {
+      font-family: 'Courier New', monospace;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      word-break: break-all;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 0;
+      gap: 50px;
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .hero-image {
+      flex: 1;
+      text-align: center;
+      max-width: 500px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 25px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-image img:hover {
+      transform: scale(1.05) rotate(2deg);
+    }
+
+    .main-title {
+      font-size: 4rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      background: linear-gradient(45deg, #fff, #e0e0e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+
+    .ticker {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: #ffeb3b;
+      margin-bottom: 30px;
+      text-shadow: 0 0 20px rgba(255, 235, 59, 0.8);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 20px rgba(255, 235, 59, 0.8); }
+      to { text-shadow: 0 0 30px rgba(255, 235, 59, 1), 0 0 40px rgba(255, 235, 59, 0.8); }
+    }
+
+    .description {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      background: linear-gradient(45deg, #ff6b6b, #feca57);
+      color: white;
+      font-weight: bold;
+      padding: 18px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+    }
+
+    .cta-button.secondary {
+      background: transparent;
+      border: 3px solid #ffeb3b;
+      color: #ffeb3b;
+      box-shadow: 0 10px 30px rgba(255, 235, 59, 0.3);
+    }
+
+    .cta-button.secondary:hover {
+      background: #ffeb3b;
+      color: #333;
+      box-shadow: 0 15px 40px rgba(255, 235, 59, 0.5);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin: 80px 0;
+      padding: 0 20px;
+    }
+
+    .feature {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      padding: 40px;
+      border-radius: 25px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transform: rotate(45deg);
+      transition: all 0.6s ease;
+      opacity: 0;
+    }
+
+    .feature:hover::before {
+      opacity: 1;
+      animation: shine 0.6s ease-in-out;
+    }
+
+    @keyframes shine {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+
+    .feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(255, 255, 255, 0.2);
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 25px;
+      display: block;
+    }
+
+    .feature-title {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: #ffeb3b;
+    }
+
+    .feature-desc {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    .social-section {
+      text-align: center;
+      padding: 60px 20px;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      margin: 60px 0;
+    }
+
+    .social-title {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #ffeb3b;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px 25px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    .social-link:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .social-link img {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: rgba(255, 255, 255, 0.6);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+      }
+
+      .main-title {
+        font-size: 2.5rem;
+      }
+
+      .ticker {
+        font-size: 2rem;
+      }
+
+      .nav {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+
+      .cta-buttons {
+        justify-content: center;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+        padding: 0;
+      }
+
+      .social-links {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <div class="container">
+    <nav class="nav">
+      <a href="#" class="nav-logo">$SHADES</a>
+      <div class="nav-links">
+        <a href="#" class="nav-link">Home</a>
+        <a href="how-to-buy.html" class="nav-link">How to Buy</a>
+      </div>
+    </nav>
+
+    <div class="contract-section">
+      <div class="contract-label">Contract Address</div>
+      <div class="contract-address">7Lkvnco5tVE7So7stWB2DGu2HtaRqcPfm76xNf73pump</div>
+    </div>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="main-title">bunnywifshades</h1>
+        <div class="ticker">$SHADES</div>
+        <p class="description">
+          The coolest bunny on the blockchain. When you're this cute AND this cool, you don't just hop - you moonwalk to the moon. 😎🐰
+        </p>
+        <div class="cta-buttons">
+          <a href="how-to-buy.html" class="cta-button">Buy $SHADES</a>
+          <a href="#features" class="cta-button secondary">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://pump.mypinata.cloud/ipfs/QmZBtowju9Ek2cwnGeKqhtX4No7Hh3Sr2fSM6tUn5BKKfi?img-width=800&img-dpr=2&img-onerror" alt="bunnywifshades - The coolest bunny">
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="feature">
+        <div class="feature-icon">😎</div>
+        <h3 class="feature-title">Too Cool</h3>
+        <p class="feature-desc">This bunny doesn't just wear shades for fashion - it's protection from all the flashlights going off from the paparazzi.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🚀</div>
+        <h3 class="feature-title">Moon Mission</h3>
+        <p class="feature-desc">While other animals hop, this bunny flies straight to the moon with style and swagger.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💎</div>
+        <h3 class="feature-title">Diamond Paws</h3>
+        <p class="feature-desc">Strong community of diamond-handed holders who believe in the power of cool bunnies.</p>
+      </div>
+    </section>
+
+    <section class="social-section">
+      <h2 class="social-title">Join the Cool Squad</h2>
+      <div class="social-links">
+        <a href="https://pump.fun/coin/7Lkvnco5tVE7So7stWB2DGu2HtaRqcPfm76xNf73pump" target="_blank" class="social-link">
+          <img src="https://logos-world.net/wp-content/uploads/2024/10/Pump-Fun-Logo.png" alt="Pump Fun">
+          Pump.fun
+        </a>
+        <a href="https://x.com/i/communities/1928542642301788354" target="_blank" class="social-link">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpevfm2P0BtgC9LbXH1n2Xp-oR-iLX8xQTBg&s" alt="X">
+          Join the X Community
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 bunnywifshades ($SHADES). The coolest bunny on Solana.</p>
+  </footer>
+</body>
+</html>
